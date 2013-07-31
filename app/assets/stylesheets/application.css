@@ -13,6 +13,7 @@
  */
  *= require foundation_and_overrides
 
- .container{
- 	color: #2ba6cb;
- }
+#menu {
+  @include button-base;
+  @include button-size($padding, $full-width, $is-input);
+}
