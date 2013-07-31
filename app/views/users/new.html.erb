@@ -1,7 +1,7 @@
 <h1>Sign Up</h1>
 
 <%= form_for @user do |f| %>
-	<% if @user.errors.any? %>
+<!-- 	<% if @user.errors.any? %>
 		<div>
 			<h3 class = "alert">Try again</h3>
 		</div>
@@ -13,7 +13,7 @@
 				<% end %>
 			</ul>
 		</div>
-	<% end %>
+	<% end %> -->
 	<div class = "field">
 		<%= f.label :first_name %>
 		<%= f.text_field :first_name %>
