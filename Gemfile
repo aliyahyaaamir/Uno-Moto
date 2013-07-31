@@ -8,9 +8,8 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'sorcery'
 
-group :tools do
-	gem 'guard-test'
-end
+
+
 
 group :development do
 	gem 'better_errors'
