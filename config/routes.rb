@@ -4,4 +4,6 @@ root :to => "landing#index"
 
 resources :sessions
 
+resources :users
+
 end
