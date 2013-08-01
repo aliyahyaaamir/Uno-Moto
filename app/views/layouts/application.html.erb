@@ -53,6 +53,9 @@
             <li><%= link_to 'Login', :root %></li>
             <li><%= link_to 'Sign Up', :new_user %></li>
             <li><%= link_to 'Explore', :root %></li>
+            <li class = "<%= 'active' if current_page? new_user_path %>">
+              <%= link_to 'Logout', :sessions_destroy %>
+            </li>
           </ul>
         </nav>
         <p class="show-for-small">
