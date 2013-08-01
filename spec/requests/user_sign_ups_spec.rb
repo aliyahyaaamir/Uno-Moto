@@ -17,7 +17,7 @@ describe "UserSignUps" do
 		assert find('#user_email')
 		assert find('#user_password')
 
-		assert has_title?('Sign Up!')
+		assert has_content?('Sign Up!')
 		# user = FactoryGirl.create(:user)
 		# fill_in "user[email]", :with => user.email
 	end
