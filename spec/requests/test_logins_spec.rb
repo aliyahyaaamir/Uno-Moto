@@ -9,5 +9,6 @@ describe "TestLogins" do
 		fill_in "email", with: user.email
 		fill_in "password", with: pass
 		click_button "Login"
+		assert page.has_content?('Logged in!')
 	end
 end
