@@ -9,4 +9,6 @@ resources :sessions
 
 resources :users
 
+resources :rental_items
+
 end

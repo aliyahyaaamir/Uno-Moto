@@ -1,0 +1,2 @@
+module RentalitemsHelper
+end
