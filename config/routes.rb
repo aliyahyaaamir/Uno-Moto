@@ -11,4 +11,8 @@ resources :users
 
 resources :rental_items
 
+namespace :my do
+	resources :rental_items
+end
+
 end
