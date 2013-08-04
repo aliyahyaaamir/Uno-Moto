@@ -10,7 +10,7 @@ class My::RentalItemsController < ApplicationController
 	end
 
 	def create
-		@myrentalitem = current_user.rental_items(params[:rental_item])
+		@myrentalitem = current_user.rental_items.new(params[:rental_item])
 		@myrentalitem.user_id = current_user.id
 		if @myrentalitem.save
 			redirect_to root_path, :notice => "Your rental item was added"

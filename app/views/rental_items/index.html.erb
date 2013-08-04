@@ -2,6 +2,10 @@
 
 <% @rentals.each do |rental| %>
 
-	<%= rental.title %>
+	<div><p><%= rental.title %></br>
+			<%= rental.description %><br />
+			<%= rental.price_per_day %><br />
+			<%= rental.price_per_week %><br /></p>
+	</div>
 
 <% end %>

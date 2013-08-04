@@ -1,5 +1,7 @@
 <% @myrentalitems.each do |myrentalitem| %>
 	<div class = "project"><p><%= myrentalitem.title %><br/>
-		<%= myrentalitem.description %></p></div>
+		<%= myrentalitem.description %><br/>
+		$<%= myrentalitem.price_per_day %><br/>
+		$<%= myrentalitem.price_per_week %></p></div>
 <% end %>
 	<%= link_to "Add item", new_my_rental_item_path %>
