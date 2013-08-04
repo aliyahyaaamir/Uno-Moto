@@ -1,1 +1,25 @@
-new.html.erb
+<h1>Add a project</h1>
+
+<%= form_for [:my, @myrentalitem] do |f| %>
+	<div class = "field">
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+
+	<div class = "field">
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</div>
+
+	<div class = "field">
+		<%= f.label :price_per_day %>
+		<%= f.text_field :price_per_day %>
+	</div>
+
+	<div class = "field">
+		<%= f.label :price_per_week %>
+		<%= f.text_field :price_per_week %>
+	</div>
+
+	<div class = "actions"><%= f.submit value = "Publish Item" %></div>
+	<% end %>

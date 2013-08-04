@@ -56,15 +56,13 @@
             <% if !current_user %>
             <li><%= link_to 'Sign Up', :new_user %></li>
             <% end %>
-            <li><%= link_to 'Explore', :root %></li>
-            <% if current_user %>
-            <li>
-              <%= link_to 'Logout', :sessions_destroy %>
-            </li>
-            <% end %>
+            <li><%= link_to 'Explore', :rental_items %></li>
             <% if current_user %>
             <li>
               <%= link_to 'My Rental Items', :my_rental_items %>
+            </li>
+            <li>
+              <%= link_to 'Logout', :sessions_destroy %>
             </li>
             <% end %>
           </ul>
@@ -77,12 +75,12 @@
 
     <div class="row">
       <section role="main">
-        <div class="row">
-          <div class="eight columns">
+ <!--        <div class="row">
+          <div class="eight columns"> -->
             
               <%= yield %>
-          </div>
-        </div>
+       <!--    </div>
+        </div> -->
       </section>
 
       <section id="sidebar" role="complementary">
