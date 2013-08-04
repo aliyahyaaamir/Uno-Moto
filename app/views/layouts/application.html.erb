@@ -50,12 +50,23 @@
         <nav id="menu" role="navigation" class="hide-for-small">
           <ul id="mainNav" class="nav-bar">
             <li><%= link_to 'Home', :root %></li>
+            <% if !current_user %>
             <li><%= link_to 'Login', :new_session %></li>
+            <% end %>
+            <% if !current_user %>
             <li><%= link_to 'Sign Up', :new_user %></li>
+            <% end %>
             <li><%= link_to 'Explore', :root %></li>
-            <li class = "<%= 'active' if current_page? new_user_path %>">
+            <% if current_user %>
+            <li>
               <%= link_to 'Logout', :sessions_destroy %>
             </li>
+            <% end %>
+            <% if current_user %>
+            <li>
+              <%= link_to 'My Rental Items', :my_rental_items %>
+            </li>
+            <% end %>
           </ul>
         </nav>
         <p class="show-for-small">
@@ -68,8 +79,7 @@
       <section role="main">
         <div class="row">
           <div class="eight columns">
-            <h3>Off Canvas Nav Sidebar on Mobile</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nulla massa. Sed ultricies posuere tincidunt. Morbi dolor est, aliquet quis egestas eu, consectetur nec neque. Etiam velit libero, congue eu accumsan sit amet, eleifend et sem. Donec ac felis sed sapien placerat venenatis. Fusce id tempus nunc. Vestibulum pellentesque vulputate tempus. Suspendisse sed consequat lectus. Nulla bibendum venenatis eros, elementum malesuada mi imperdiet eu. Fusce ornare gravida nulla, sed scelerisque sem scelerisque at.</p>
+            
               <%= yield %>
           </div>
         </div>
