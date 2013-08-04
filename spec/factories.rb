@@ -7,8 +7,9 @@ FactoryGirl.define do
 		password "password"
 	end
 
+
 	factory :rental_item do
-		sequence(:title) { |n| "Item#{n}"
+		sequence(:title) { |n| "Item#{n}"}
 		description "Rental item"
 		price_per_day 30
 		price_per_week 120
