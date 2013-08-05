@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, :message => "should match confirmation", :if => :password
   validates_presence_of :password, :on => :create
   has_many :rental_items
+  has_many :locations, :through => :rental_items
 
 
 end

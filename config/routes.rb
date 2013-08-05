@@ -2,6 +2,7 @@ UnoMoto::Application.routes.draw do
 
 get '/sessions/destroy'
 
+resources :locations
 
 root :to => "landing#index"
 
