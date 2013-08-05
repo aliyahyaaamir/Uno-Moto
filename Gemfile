@@ -9,6 +9,7 @@ gem 'pg'
 gem 'sorcery'
 gem "rmagick"
 gem "carrierwave"
+gem 'geocoder'
 
 
 
