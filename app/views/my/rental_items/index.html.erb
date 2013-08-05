@@ -1,5 +1,6 @@
 <% @myrentalitems.each do |myrentalitem| %>
 	<div class = "project"><p><%= myrentalitem.title %><br/>
+		<%= image_tag myrentalitem.image_url(:thumb).to_s %><br />
 		<%= myrentalitem.description %><br/>
 		$<%= myrentalitem.price_per_day %><br/>
 		$<%= myrentalitem.price_per_week %></p></div>

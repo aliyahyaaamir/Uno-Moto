@@ -1,6 +1,6 @@
 <h1>Add a project</h1>
 
-<%= form_for [:my, @myrentalitem] do |f| %>
+<%= form_for [:my, @myrentalitem], :html => {:multipart => true} do |f| %>
 	<div class = "field">
 		<%= f.label :title %>
 		<%= f.text_field :title %>
@@ -19,6 +19,15 @@
 	<div class = "field">
 		<%= f.label :price_per_week %>
 		<%= f.text_field :price_per_week %>
+	</div>
+
+	<div class = "field">
+		<%= f.file_field :image %>
+	</div>
+
+	<div class = "field">
+		<%= f.label :remote_image_url, "or image URL" %><br />
+		<%= f.text_field :remote_image_url %>
 	</div>
 
 	<div class = "actions"><%= f.submit value = "Publish Item" %></div>
