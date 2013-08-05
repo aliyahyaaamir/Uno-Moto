@@ -4,9 +4,9 @@
 	<h1> hello </h1>
 <% end %>
 <%= form_for @user do |f| %>
-<!-- 	<% if @user.errors.any? %>
-		<div>
-			<h3 class = "alert">Try again</h3>
+	<% if @user.errors.any? %>
+		<div data-alert class = "error_msg">
+			<h3>Try again</h3><a href="#" class="close">&times;</a>
 		</div>
 		<div class = "error_messages">
 			<h2>Form is invalid</h2>
@@ -16,7 +16,7 @@
 				<% end %>
 			</ul>
 		</div>
-	<% end %> -->
+	<% end %>
 	<div class = "field">
 		<%= f.label :username %>
 		<%= f.text_field :username %>

@@ -2,8 +2,8 @@
 	<div class = "project"><p><%= myrentalitem.title %><br/>
 		<%= image_tag myrentalitem.image_url(:thumb).to_s %><br />
 		<%= myrentalitem.description %><br/>
-		$<%= myrentalitem.price_per_day %><br/>
-		$<%= myrentalitem.price_per_week %><br/>
+		$<%= myrentalitem.price_per_day %> per day<br/>
+		$<%= myrentalitem.price_per_week %> per week<br/>
 		<%= link_to "Edit", edit_my_rental_item_path(myrentalitem) %></p></div>
 <% end %>
 	<%= link_to "Add item", new_my_rental_item_path %>
