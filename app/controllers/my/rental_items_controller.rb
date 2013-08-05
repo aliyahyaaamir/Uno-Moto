@@ -19,5 +19,22 @@ class My::RentalItemsController < ApplicationController
 		end
 	end
 
+	def edit
+		if current_user.rental_items.exists?(params[:id])
+			@myrentalitem = current_user.rental_items.find(params[:id])
+		else
+			redirect_to root_path, :notice =>"Rental item does not exist"
+		end
+	end
+
+	def update
+		@myrentalitem = current_user.rental_items.find(params[:id])
+		if @myrentalitem.update_attributes(params[:rental_item])
+			redirect_to my_rental_items_path, :notice => "Your changes have been saved!"
+		else
+			render "edit"
+		end
+	end
+
 
 end
