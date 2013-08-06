@@ -1,34 +1,38 @@
 <h1>Add a project</h1>
 
-<%= form_for [:my, @myrentalitem], :html => {:multipart => true} do |f| %>
+<%= form_tag my_rental_items_path :html => {:multipart => true} do %>
 	<div class = "field">
-		<%= f.label :title %>
-		<%= f.text_field :title %>
+		<%= label_tag :title %>
+		<%= text_field_tag :title, params[:title] %>
 	</div>
 
 	<div class = "field">
-		<%= f.label :description %>
-		<%= f.text_area :description %>
+		<%= label_tag :description %>
+		<%= text_area_tag :description, params[:description] %>
+	</div>
+		<div class = "field">
+		<%= label_tag :address %>
+		<%= text_field_tag :address, params[:address] %>
 	</div>
 
 	<div class = "field">
-		<%= f.label :price_per_day %>
-		<%= f.text_field :price_per_day %>
+		<%= label_tag :price_per_day %>
+		<%= text_field_tag :price_per_day, params[:field] %>
 	</div>
 
 	<div class = "field">
-		<%= f.label :price_per_week %>
-		<%= f.text_field :price_per_week %>
+		<%= label_tag :price_per_week %>
+		<%= text_field_tag :price_per_week, params[:price_per_week] %>
 	</div>
 
 	<div class = "field">
-		<%= f.file_field :image %>
+		<%= file_field_tag :image%>
 	</div>
 
 	<div class = "field">
-		<%= f.label :remote_image_url, "or image URL" %><br />
-		<%= f.text_field :remote_image_url %>
+		<%= label_tag :remote_image_url, "or image URL" %><br />
+		<%= text_field_tag :remote_image_url%>
 	</div>
 
-	<div class = "actions"><%= f.submit value = "Publish Item" %></div>
+	<div class = "actions"><%= submit_tag "Publish Item" %></div>
 	<% end %>

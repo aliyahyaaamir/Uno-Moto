@@ -10,6 +10,7 @@ class Location < ActiveRecord::Base
     obj.zipcode = geo.postal_code
     obj.country = geo.country_code
     obj.latitude = geo.latitude
+    obj.longitude = geo.longitude
   end
  end
 after_validation :geocode
