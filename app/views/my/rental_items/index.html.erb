@@ -1,7 +1,8 @@
 <ul class="small-block-grid-1 large-block-grid-5">
 
 <% @myrentalitems.each do |myrentalitem| %>
-	<li><div class = "project"><p><%= myrentalitem.title %><br/>
+	
+	<li class = "subheader"><div class = "project"><p><%= myrentalitem.title %><br/>
 		<%= image_tag myrentalitem.image_url(:thumb).to_s %><br />
 		<%= myrentalitem.description %><br/>
 		$<%= myrentalitem.price_per_day %> per day<br/>
