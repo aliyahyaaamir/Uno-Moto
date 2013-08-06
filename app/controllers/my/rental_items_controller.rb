@@ -36,5 +36,13 @@ class My::RentalItemsController < ApplicationController
 		end
 	end
 
+	def show
+		@myrentalitem = current_user.rental_items.find(params[:id])
+	end
 
+	def destroy
+		@myrentalitem = current_user.rental_items.find(params[:id])
+		@myrentalitem.destroy
+		redirect_to my_rental_items_path, :notice => "Your item has been deleted"
+	end
 end

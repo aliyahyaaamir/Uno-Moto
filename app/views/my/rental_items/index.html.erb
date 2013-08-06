@@ -1,9 +1,14 @@
+<ul class="small-block-grid-1 large-block-grid-5">
+
 <% @myrentalitems.each do |myrentalitem| %>
-	<div class = "project"><p><%= myrentalitem.title %><br/>
+	<li><div class = "project"><p><%= myrentalitem.title %><br/>
 		<%= image_tag myrentalitem.image_url(:thumb).to_s %><br />
 		<%= myrentalitem.description %><br/>
 		$<%= myrentalitem.price_per_day %> per day<br/>
 		$<%= myrentalitem.price_per_week %> per week<br/>
-		<%= link_to "Edit", edit_my_rental_item_path(myrentalitem) %></p></div>
+		<%= link_to "Show", my_rental_item_path(myrentalitem) %> 
+		<%= link_to "Edit", edit_my_rental_item_path(myrentalitem) %>
+		<%= link_to 'Delete', [:my,myrentalitem], :method => :delete, :class => 'btn btn-small btn-danger', :confirm => "Are you sure?" %></p></div></li>
 <% end %>
+</ul>
 	<%= link_to "Add item", new_my_rental_item_path %>
