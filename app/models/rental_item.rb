@@ -1,7 +1,9 @@
 class RentalItem < ActiveRecord::Base
   belongs_to :user
   belongs_to :location
-  attr_accessible :title, :description, :user_id, :price_per_day, :price_per_week, :image, :remote_image_url, :address
+  has_and_belongs_to_many :tags
+  accepts_nested_attributes_for :tags
+  attr_accessible :title, :description, :user_id, :price_per_day, :price_per_week, :image, :remote_image_url, :address, :tags_attributes
   validates :title, :description, :price_per_day, :price_per_week, :presence => true
   mount_uploader :image, ImageUploader
 

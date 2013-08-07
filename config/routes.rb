@@ -16,4 +16,6 @@ namespace :my do
 	resources :rental_items
 end
 
+resources :tags
+
 end

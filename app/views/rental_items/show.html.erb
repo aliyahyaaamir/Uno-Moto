@@ -1,0 +1,22 @@
+<p><%= @rentalitem.title %></p>
+<p><%= @rentalitem.description %></p>
+<%= image_tag @rentalitem.image_url(:thumb).to_s %><br />
+<p><%= @rentalitem.price_per_day %></p>
+<p><%= @rentalitem.price_per_week %></p>
+<p>#<%= @rentalitem.tags.find(2).name %></p>
+
+<div id = "tags"class= "reveal-modal">
+	<h2 class = "subclass">Add Tags</h2>
+	<%= form_for @rentalitem do |d| %>
+
+		<%= d.fields_for :tags, @rentalitem.tags.build do |f| %>
+			<div class = "field">
+				<%= f.label :name %>
+				<%= f.text_field :name %>
+			</div>
+		<% end %>
+
+	<div class = "actions"><%= d.submit value = "Publish Item" %></div>
+	<% end %>
+</div>
+<a href= "#" data-reveal-id="tags">tags</a>
