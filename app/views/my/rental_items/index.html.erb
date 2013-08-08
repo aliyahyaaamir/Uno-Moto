@@ -1,16 +1,21 @@
-<ul class="small-block-grid-1 large-block-grid-5">
-
-<% @myrentalitems.each do |myrentalitem| %>
-	
-	<li class = "subheader"><div class = "project"><p><%= myrentalitem.title %><br/>
-		<%= image_tag myrentalitem.image_url(:thumb).to_s %><br />
-		<%= myrentalitem.description %><br/>
-		$<%= myrentalitem.price_per_day %> per day<br/>
-		$<%= myrentalitem.price_per_week %> per week<br/>
-		<%= myrentalitem.location.city if myrentalitem.location %>
-		<%= link_to "Show", my_rental_item_path(myrentalitem) %> 
-		<%= link_to "Edit", edit_my_rental_item_path(myrentalitem) %>
-		<%= link_to 'Delete', [:my,myrentalitem], :method => :delete, :class => 'btn btn-small btn-danger', :confirm => "Are you sure?" %></p></div></li>
+<!-- <ul class="small-block-grid-1 large-block-grid-5"> -->
+<% num = 4 %>
+<% @myrentalitems.in_groups_of(3, false) do |row| %>
+	<div class = "row">
+		<% row.each do |myrentalitem| %>
+			<div class = "small-3 large-4 columns">
+				
+					<h2><%= myrentalitem.title %><h2>
+					<div><%= image_tag myrentalitem.image_url(:thumb).to_s %></div>
+					<div><%= myrentalitem.description %></div>
+					<div>$<%= myrentalitem.price_per_day %> per day</div>
+					<div>$<%= myrentalitem.price_per_week %> per week</div>
+					<div><%= myrentalitem.location.city if myrentalitem.location %></div>
+					<div><%= link_to "Show", my_rental_item_path(myrentalitem) %></div>
+					<div><%= link_to "Edit", edit_my_rental_item_path(myrentalitem) %></div>
+					<div><%= link_to 'Delete', [:my,myrentalitem], :method => :delete, :class => 'btn btn-small btn-danger', :confirm => "Are you sure?" %></div>
+			</div>
+		<% end %>
+	</div>
 <% end %>
-</ul>
-	<%= link_to "Add item", new_my_rental_item_path %>
+<%= link_to "Add item", new_my_rental_item_path %>

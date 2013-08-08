@@ -1,8 +1,8 @@
 <p><%= @myrentalitem.title %></p>
 <p><%= @myrentalitem.description %></p>
 <%= image_tag @myrentalitem.image_url(:thumb).to_s %><br />
-<p><%= @myrentalitem.price_per_day %></p>
-<p><%= @myrentalitem.price_per_week %></p>
+<p>$<%= @myrentalitem.price_per_day %> per day</p>
+<p>$<%= @myrentalitem.price_per_week %> per week</p>
 
 <% if @myrentalitem.location %>
 
