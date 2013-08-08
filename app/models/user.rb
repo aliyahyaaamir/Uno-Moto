@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password, :on => :create
   has_many :rental_items
   has_many :locations, :through => :rental_items
+  has_many :bookings
 
 
 end

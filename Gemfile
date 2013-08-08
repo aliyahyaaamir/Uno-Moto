@@ -40,6 +40,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
   gem 'zurb-foundation', '~> 4.0.0'
+  gem 'jquery-ui-rails'
 end
 
 gem 'jquery-rails'

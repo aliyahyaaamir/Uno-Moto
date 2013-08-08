@@ -12,6 +12,8 @@ resources :users
 
 resources :rental_items
 
+resources :bookings
+
 namespace :my do
 	resources :rental_items
 end

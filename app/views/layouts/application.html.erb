@@ -19,12 +19,16 @@
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
 
-  <link rel="stylesheet" href="stylesheets/app.css">
-  <link rel="stylesheet" href="stylesheets/offcanvas.css">
+  <!-- <link rel="stylesheet" href="stylesheets/app.css">
+  <link rel="stylesheet" href="stylesheets/offcanvas.css"> -->
 
-  <script src="javascripts/foundation/modernizr.foundation.js"></script>
+<!--   // <script src="javascripts/foundation/modernizr.foundation.js"></script> -->
+
+
+
+
   </head>  
-<!--   <nav class = "top-bar">
+<!--   <nav class = "top-bar"> run foundation gem on new project to see the links
   <nav id = "sideMenu" role = "navigation" class = "show-for-small">
    <div class = "container">
     <a class = "brand" href = "#">Uno Moto</a>
@@ -103,20 +107,7 @@
   </div>
 
   <!-- Included JS Files -->
-  <script src="javascripts/foundation/jquery.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.reveal.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.orbit.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.forms.js"></script>
-  <script src="javascripts/foundation/jquery.placeholder.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.tooltips.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.alerts.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.buttons.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.accordion.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.navigation.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.mediaQueryToggle.js"></script>
-  <script src="javascripts/foundation/jquery.foundation.tabs.js"></script>
-  <script src="javascripts/foundation/jquery.offcanvas.js"></script>
-  <script src="javascripts/foundation/app.js"></script>
+
     <%if flash[:notice] %>
       <p id = "notice"><%= flash[:notice] %>
       </p>

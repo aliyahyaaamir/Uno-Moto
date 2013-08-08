@@ -1,6 +1,7 @@
 class RentalItem < ActiveRecord::Base
   belongs_to :user
   belongs_to :location
+  has_many :bookings
   has_and_belongs_to_many :tags
   accepts_nested_attributes_for :tags
   attr_accessible :title, :description, :user_id, :price_per_day, :price_per_week, :image, :remote_image_url, :address, :tags_attributes
