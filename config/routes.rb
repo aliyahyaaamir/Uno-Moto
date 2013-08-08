@@ -10,9 +10,11 @@ resources :sessions
 
 resources :users
 
-resources :rental_items
+resources :rental_items do
+	resources :bookings
+end
 
-resources :bookings
+
 
 namespace :my do
 	resources :rental_items

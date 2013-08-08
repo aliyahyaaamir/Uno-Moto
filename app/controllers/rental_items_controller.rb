@@ -6,6 +6,7 @@ end
 
 def show
 	@rentalitem = RentalItem.find(params[:id])
+	@booking = @rentalitem.bookings.new
 end
 
 def update
