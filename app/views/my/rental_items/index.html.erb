@@ -10,7 +10,14 @@
 					<div>$<%= myrentalitem.price_per_day %> per day</div>
 					<div>$<%= myrentalitem.price_per_week %> per week</div>
 					<% if myrentalitem.location %>
-					<div><%= myrentalitem.location.city %>, <%= myrentalitem.location.country %></div>
+						<div><%= link_to myrentalitem.location.city, rental_items_place_path(myrentalitem.location.city) %>, <%= myrentalitem.location.country %>
+						</div>
+					<% end %>
+					<% if myrentalitem.tags.exists? %>
+						<div><% myrentalitem.tags.each do |tag| %>
+							 	<%= link_to'#' + tag.name, rental_items_tag_path(tag.name) %>
+							 <% end %>
+						</div>
 					<% end %>
 					<div><%= link_to "Show", my_rental_item_path(myrentalitem) %></div>
 					<div><%= link_to "Edit", edit_my_rental_item_path(myrentalitem) %></div>
