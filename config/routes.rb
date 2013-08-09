@@ -16,6 +16,7 @@ end
 
 namespace :rental_items do
 	resources :places
+	resources :tags
 end
 
 
