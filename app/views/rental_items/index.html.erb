@@ -1,13 +1,20 @@
 <h1>Listing Rentals</h1>
 
-<% @rentals.each do |rental| %>
 
-	<div><p><%= rental.title %></br>
-			<%= rental.description %><br />
-			<%= image_tag rental.image_url(:thumb).to_s %><br />
-			<%= rental.price_per_day %><br />
-			<%= rental.price_per_week %><br /></p>
-			<%= link_to "Show", rental_item_path(rental) %>
+<!-- <ul class="small-block-grid-1 large-block-grid-5"> -->
+<% @rentals.in_groups_of(3, false) do |row| %>
+	<div class = "row">
+		<% row.each do |myrentalitem| %>
+			<div class = "small-3 large-4 columns">
+				
+					<h2><%= myrentalitem.title %><h2>
+					<div><%= image_tag myrentalitem.image_url(:thumb).to_s %></div>
+					<div><%= myrentalitem.description %></div>
+					<div>$<%= myrentalitem.price_per_day %> per day</div>
+					<div>$<%= myrentalitem.price_per_week %> per week</div>
+					<div><%= myrentalitem.location.city if myrentalitem.location %></div>
+					<div><%= link_to "Show", rental_item_path(myrentalitem) %></div>
+			</div>
+		<% end %>
 	</div>
-
 <% end %>

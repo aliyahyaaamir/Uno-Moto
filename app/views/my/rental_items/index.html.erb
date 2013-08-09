@@ -1,5 +1,4 @@
 <!-- <ul class="small-block-grid-1 large-block-grid-5"> -->
-<% num = 4 %>
 <% @myrentalitems.in_groups_of(3, false) do |row| %>
 	<div class = "row">
 		<% row.each do |myrentalitem| %>
@@ -10,7 +9,9 @@
 					<div><%= myrentalitem.description %></div>
 					<div>$<%= myrentalitem.price_per_day %> per day</div>
 					<div>$<%= myrentalitem.price_per_week %> per week</div>
-					<div><%= myrentalitem.location.city if myrentalitem.location %></div>
+					<% if myrentalitem.location %>
+					<div><%= myrentalitem.location.city %>, <%= myrentalitem.location.country %></div>
+					<% end %>
 					<div><%= link_to "Show", my_rental_item_path(myrentalitem) %></div>
 					<div><%= link_to "Edit", edit_my_rental_item_path(myrentalitem) %></div>
 					<div><%= link_to 'Delete', [:my,myrentalitem], :method => :delete, :class => 'btn btn-small btn-danger', :confirm => "Are you sure?" %></div>
