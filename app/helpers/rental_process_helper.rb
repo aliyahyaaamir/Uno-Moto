@@ -1,0 +1,2 @@
+module RentalProcessHelper
+end

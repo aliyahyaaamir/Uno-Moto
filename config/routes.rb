@@ -1,6 +1,7 @@
 UnoMoto::Application.routes.draw do
 
 get '/sessions/destroy'
+get '/rental-process' => 'rental-process#index', as: 'process'
 
 resources :locations
 

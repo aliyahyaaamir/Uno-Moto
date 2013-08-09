@@ -55,9 +55,8 @@
           <ul id="mainNav" class="nav-bar">
             <li><%= link_to 'Home', :root %></li>
             <% if !current_user %>
+            <li><%= link_to 'Rental Process', :process %></li>
             <li><%= link_to 'Login', :new_session %></li>
-            <% end %>
-            <% if !current_user %>
             <li><%= link_to 'Sign Up', :new_user %></li>
             <% end %>
             <li><%= link_to 'Explore', :rental_items %></li>
