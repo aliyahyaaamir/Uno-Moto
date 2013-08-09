@@ -1,8 +1,7 @@
-<!-- <ul class="small-block-grid-1 large-block-grid-5"> -->
-<% @myrentalitems.in_groups_of(6, false) do |row| %>
+<% @rental.in_groups_of(3, false) do |row| %>
 	<div class = "row">
 		<% row.each do |myrentalitem| %>
-			<div class = "small-3 large-2 columns">
+			<div class = "small-3 large-4 columns">
 				
 					<h2><%= myrentalitem.title %><h2>
 					<div><%= image_tag myrentalitem.image_url(:thumb).to_s %></div>
@@ -19,4 +18,3 @@
 		<% end %>
 	</div>
 <% end %>
-<%= link_to "Add item", new_my_rental_item_path %>

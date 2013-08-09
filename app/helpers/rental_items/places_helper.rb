@@ -1,0 +1,2 @@
+module RentalItems::PlacesHelper
+end

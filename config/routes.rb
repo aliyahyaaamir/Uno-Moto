@@ -14,6 +14,9 @@ resources :rental_items do
 	resources :bookings
 end
 
+namespace :rental_items do
+	resources :places
+end
 
 
 namespace :my do
