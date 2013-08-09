@@ -4,18 +4,23 @@
 <!-- <ul class="small-block-grid-1 large-block-grid-5"> -->
 <% @rentals.in_groups_of(3, false) do |row| %>
 	<div class = "row">
-		<% row.each do |myrentalitem| %>
+		<% row.each do |rental| %>
 			<div class = "small-3 large-4 columns">
 				
-					<h2><%= myrentalitem.title %><h2>
-					<div><%= image_tag myrentalitem.image_url(:thumb).to_s %></div>
-					<div><%= myrentalitem.description %></div>
-					<div>$<%= myrentalitem.price_per_day %> per day</div>
-					<div>$<%= myrentalitem.price_per_week %> per week</div>
-					<% if myrentalitem.location %>
-					<div><%= link_to myrentalitem.location.city, rental_items_place_path(myrentalitem.location.city) %>, <%= myrentalitem.location.country %></div>
+					<h2><%= rental.title %><h2>
+					<div><%= image_tag rental.image_url(:thumb).to_s %></div>
+					<div><%= rental.description %></div>
+					<div>$<%= rental.price_per_day %> per day</div>
+					<div>$<%= rental.price_per_week %> per week</div>
+					<% if rental.location %>
+					<div><%= link_to rental.location.city, rental_items_place_path(rental.location.city) %>, <%= rental.location.country %></div>
 					<% end %>
-					<div><%= link_to "Show", rental_item_path(myrentalitem) %></div>
+					<% if rental.tags.exists? %>
+						<div><% rental.tags.each do |tag| %>
+							 	#<%= tag.name %>
+							 <% end %></div>
+					<% end %>
+					<div><%= link_to "Show", rental_item_path(rental) %></div>
 			</div>
 		<% end %>
 	</div>
