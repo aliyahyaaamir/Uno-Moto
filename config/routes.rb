@@ -22,6 +22,7 @@ end
 
 namespace :my do
 	resources :rental_items
+	resources :rents, :only => [:index]
 end
 
 resources :tags
