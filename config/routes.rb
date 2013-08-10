@@ -13,6 +13,9 @@ resources :users
 
 resources :rental_items do
 	resources :bookings
+	collection do
+		get "search"
+	end
 end
 
 namespace :rental_items do

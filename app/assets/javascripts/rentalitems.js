@@ -7,4 +7,8 @@ $( document ).ready(function() {
 		// == event.stopPropagation();
 		// == event.preventDefault();
 	});
+	$('#search').typeahead({
+		name: 'items',
+		remote: '/rental_items/search.json?%QUERY'
+	});
 });

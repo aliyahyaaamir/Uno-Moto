@@ -11,6 +11,8 @@ gem "rmagick"
 gem "carrierwave"
 gem 'geocoder'
 
+gem 'twitter-typeahead-rails', :git => "git://github.com/yourabi/twitter-typeahead-rails.git"
+
 
 
 

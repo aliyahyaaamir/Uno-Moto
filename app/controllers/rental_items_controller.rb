@@ -19,4 +19,12 @@ def update
 		end
 end
 
+def search
+	@rentalitems = RentalItem.where("title ILIKE '%#{params[:q]}%'")
+
+	respond_to do |format|
+		format.json { render :json => @rentalitems.map { |r| r.title }}
+	end
+end
+
 end
