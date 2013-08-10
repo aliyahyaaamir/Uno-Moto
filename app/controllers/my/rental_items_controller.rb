@@ -10,8 +10,8 @@ class My::RentalItemsController < ApplicationController
 	end
 
 	def create
-		@location = Location.new(address: params[:address]) #need to remove this line of code
-		@myrentalitem = @location.rental_items.new(params[:rental_item])
+
+		@myrentalitem = RentalItem.new(params[:rental_item])
 		@myrentalitem.user_id = current_user.id
 		if @myrentalitem.save && @location.save
 			redirect_to root_path, :notice => "Your rental item was added"

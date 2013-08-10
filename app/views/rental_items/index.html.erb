@@ -21,6 +21,7 @@
 							 <% end %>
 						</div>
 					<% end %>
+					<div><%= Geocoder::Calculations.distance_between(current_user.location,rental.location).round %> miles</div>
 					<div><%= link_to "Show", rental_item_path(rental) %></div>
 			</div>
 		<% end %>
