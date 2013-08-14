@@ -1,12 +1,13 @@
 <p><%= @rentalitem.title %></p>
 <p>Description: <%= @rentalitem.description %></p>
-<%= image_tag @rentalitem.image_url(:thumb).to_s %><br />
+<div><%= image_tag @rentalitem.image_url(:thumb).to_s %><br /></div>
 <p>$<%= @rentalitem.price_per_day %> per day</p>
 <p>$<%= @rentalitem.price_per_week %> per week</p>
 <p><%#= @rentalitem.tags.find(2).name %></p>
 
 <% if @rentalitem.location %>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@rentalitem.location.latitude}%2C#{@rentalitem.location.longitude}" %>
+<div class = "google_map">
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@rentalitem.location.latitude}%2C#{@rentalitem.location.longitude}" %></div>
 <% end %><br/>
 
 <div id = "tags"class= "reveal-modal">

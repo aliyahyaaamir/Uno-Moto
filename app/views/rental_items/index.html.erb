@@ -1,4 +1,10 @@
-<h1>Listing Rentals</h1>
+<h1>Listing Rentals</h1><dl class="sub-nav">
+  <dt>Filter:</dt>
+  <dd class="active"><a href="#">All</a></dd>
+  <dd><a href="#">Active</a></dd>
+  <dd><a href="#">Pending</a></dd>
+  <dd><a href="#">Suspended</a></dd>
+</dl>
 
 
 <!-- <ul class="small-block-grid-1 large-block-grid-5"> -->
@@ -21,7 +27,9 @@
 							 <% end %>
 						</div>
 					<% end %>
+					<% if current_user %>
 					<div><%= Geocoder::Calculations.distance_between(current_user.location,rental.location).round %> miles</div>
+					<% end %>
 					<div><%= link_to "Show", rental_item_path(rental) %></div>
 			</div>
 		<% end %>
